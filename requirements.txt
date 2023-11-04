@@ -1,3 +1,4 @@
 sklearn==0.0
 matplotlib==3.2.2
 anvil-uplink==0.3.36
+pandas==1.2.4
