@@ -1,7 +1,23 @@
-FROM python:3.8
-ADD requirements.txt /
-RUN pip install -r /requirements.txt
+# Use a more recent Python version
+FROM python:3.10
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the required packages
+RUN pip install -r requirements.txt
+
+# Expose the desired port (if needed)
 EXPOSE 80
-ADD knn.py /
+
+# Copy your Python script into the container
+COPY knn.py .
+
+# Set the environment variable
 ENV PYTHONUNBUFFERED=1
-CMD [ "python","./knn.py"]
+
+# Run your Python script
+CMD ["python", "knn.py"]
