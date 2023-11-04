@@ -1,0 +1,8 @@
+version: "3"
+services:
+  knn-uplink:
+    restart: always 
+    container_name: knn-uplink
+    image: knn-uplink
+    build: 
+       context: .
